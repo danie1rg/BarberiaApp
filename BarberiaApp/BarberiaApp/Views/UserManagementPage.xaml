@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.UserManagementPage"
+             BackgroundColor="LightGray"
+             x:Name="UserMainPage">
+    <ContentPage.Content>
+
+        <StackLayout Padding="20">
+
+            <Entry x:Name="TxtID" IsEnabled="False" VerticalTextAlignment="Center" />
+
+            <Entry x:Name="TxtEmail" IsEnabled="False" Placeholder="Username / Email" Keyboard="Email" ClearButtonVisibility="WhileEditing" />
+
+            <Entry x:Name="TxtName" IsEnabled="false" Placeholder="Name" Keyboard="Text" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="White"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="TxtBackUpEmail" IsEnabled="false" Placeholder="Backup Email" Keyboard="Email" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="white"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="TxtPhoneNumber" IsEnabled="false" Placeholder="Phone Number" Keyboard="Telephone" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="white"/>
+                        <Setter Property="TextColor" Value="black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Editor x:Name="TxtAddress" IsEnabled="false" Placeholder="Address" MinimumHeightRequest="0" AutoSize="TextChanges" Keyboard="Text">
+                <Editor.Triggers>
+                    <Trigger TargetType="Editor" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="White"/>
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Editor.Triggers>
+            </Editor>
+
+
+            <StackLayout Orientation="Horizontal" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="BtnUpdate" IsVisible="false" Grid.Column="0" Text="Apply"  WidthRequest="350"  CornerRadius="15" BackgroundColor="Black" FontSize="15" Clicked="BtnUpdate_Clicked" />
+                    <ImageButton x:Name="BtnEdit" Grid.Column="2"  Clicked="ButtonEdit_Clicked" IsVisible="true" Padding="0,0,0,0" Margin="0,0,0,0" BackgroundColor="LightGray">
+                        <ImageButton.Source >
+                            <FileImageSource File="user_avatar.png"  />
+                        </ImageButton.Source>
+                    </ImageButton>
+                    <Button x:Name="BtnUpdatePass" Grid.Column="1" IsVisible="true" Text="Change password" WidthRequest="300"  CornerRadius="15" BackgroundColor="Black" FontSize="15" Clicked="BtnUpdatePass_Clicked" />
+                    
+                </Grid>
+                
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

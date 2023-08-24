@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.ListAppointmentsPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+
+            <StackLayout>
+                <ListView x:Name="LvList" RowHeight="150" BackgroundColor="white" SeparatorVisibility="Default" IsVisible="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="20">
+                                <StackLayout Padding="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="105"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20" />
+                                            <RowDefinition Height="35" />
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding Descripcion}" TextColor="Black" FontSize="Medium" />
+                                        <Label Grid.Row="0" Grid.Column="2"  Text="{Binding Fechad}" Margin="0,0,30,0" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="1" Grid.Column="0" Text="Hora:" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="1" Text="{Binding Horad}" Margin="35,0,0,0" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="2" Grid.Column="0" Text="Cliente:" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="2" Grid.Column="0" Margin="50,0,0,0" Text="{Binding FullNombre}" TextColor="Gray" FontSize="Small"/>
+                                        <Label  Grid.Row="3" Grid.Column="0" Text="Télefono:" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="3" Grid.Column="0" Margin="60,0,0,0" Text="{Binding CelularDeCliente}" TextColor="Black" FontSize="Small"/>
+                                        <ImageButton Grid.Column="2" CommandParameter="{Binding Citaid}" Grid.Row="4" BackgroundColor="white"  Clicked="ButtonUpdateCita_Clicked" Padding="0,0,0,0" Margin="5,0,0,0">
+                                            <ImageButton.Source >
+                                                <FileImageSource File="edit_cita.png"  />
+                                            </ImageButton.Source>
+                                        </ImageButton>
+                                    </Grid>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+
+            </StackLayout>
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.ListCustumerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="0,1,0,0" Padding="0,0,0,0" HeightRequest="70"  BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45" />
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0" BackgroundColor="White" Clicked="ButtonCreateCita_Clicked" Padding="0,0,0,0" Margin="5,0,0,0">
+                    <ImageButton.Source >
+                        <FileImageSource File="cita_a.png" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <SearchBar Grid.Column="1"  x:Name="TxtSearch"  FontSize="30" Keyboard="Text" TextColor="Black"  TextChanged="TxtSearch_TextChanged" Margin="0,0,0,0" />
+                <ImageButton Grid.Column="2"  BackgroundColor="White"  Clicked="ButtonCreate_Clicked" Padding="0,0,0,0" Margin="0,0,0,0">
+                    <ImageButton.Source >
+                        <FileImageSource File="add_custumer.png"  />
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+            <Label  Grid.Row="1" Grid.Column="0" Margin="3,0,0,0" Text="Add Appointment" TextColor="Black" FontSize="Micro"/>
+            <ScrollView >
+                <ListView x:Name="LvList" BackgroundColor="White"  RowHeight="100" SeparatorVisibility="Default" IsVisible="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="60"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="24"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="15" />
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding FullName}" Padding="0,0,0,0" TextColor="Blue" FontSize="Medium" />
+                                        <Label Grid.Row="1"  Text="{Binding Correo}" TextColor="Black" FontSize="Small"/>
+                                        <Label  Grid.Row="2" Text="{Binding Celular}" TextColor="Black" FontSize="Small"/>
+                                        <ImageButton Grid.Column="2" Grid.Row="0" BackgroundColor="white"  Clicked="ButtonUpdate_Clicked" Padding="0,0,0,0" Margin="75,0,0,0">
+                                            <ImageButton.Source >
+                                                <FileImageSource File="edit_cita.png"  />
+                                            </ImageButton.Source>
+                                        </ImageButton>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

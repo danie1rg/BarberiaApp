@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.ListCategoriesAppointmentPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+                <Grid Margin="0,1,0,0" Padding="0,0,0,0" HeightRequest="50"  BackgroundColor="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <AbsoluteLayout>
+                        <Label  Grid.Row="0" Grid.Column="1" Margin="40,13,0,0" Text="Add Category" TextColor="Black" FontSize="Medium"/>
+                        <ImageButton Grid.Column="0" Grid.Row="0"   BackgroundColor="white"  Clicked="ButtonCreate_Clicked"  Margin="5,10,140,0">
+                            <ImageButton.Source >
+                                <FileImageSource File="add.png"  />
+                            </ImageButton.Source>
+                        </ImageButton>
+                    </AbsoluteLayout>
+                    
+                </Grid>
+                <ScrollView >
+                    <ListView x:Name="LvList" BackgroundColor="White"  RowHeight="100" SeparatorVisibility="Default" IsVisible="true">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="200"/>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="24"/>
+                                                <RowDefinition Height="20"/>
+                                                <RowDefinition Height="15" />
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding Description}" Padding="0,0,0,0" TextColor="Black" FontSize="Medium" />
+                                            <ImageButton Grid.Column="2" Grid.Row="0" BackgroundColor="white"  Clicked="ButtonUpdate_Clicked" Padding="0,0,0,0" Margin="75,0,0,0">
+                                                <ImageButton.Source >
+                                                    <FileImageSource File="edit_cita.png"  />
+                                                </ImageButton.Source>
+                                            </ImageButton>
+                                        </Grid>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

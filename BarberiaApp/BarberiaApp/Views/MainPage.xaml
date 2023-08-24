@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.MainPage"
+            NavigationPage.HasBackButton="False"
+            xmlns:local="clr-namespace:BarberiaApp.Views">
+
+        <TabbedPage.ToolbarItems>
+        <ToolbarItem  IconImageSource="user.png" Priority="2" Order="Primary" Clicked="UserBtn_Clicked" >
+            </ToolbarItem>
+
+
+        </TabbedPage.ToolbarItems>
+    <local:ListAppointmentsPage Title="Appointments" />
+    <local:ListCustumerPage Title="Custumers"/>
+    <local:StartPage Title="More"/>
+
+
+</TabbedPage>

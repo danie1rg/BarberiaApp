@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BarberiaApp.Views.UpdateCustumerPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" >
+
+            <Entry x:Name="TxtNombre" Placeholder="Name" Keyboard="Text" ClearButtonVisibility="WhileEditing" >
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="DimGray"/>
+                        <Setter Property="TextColor" Value="WhiteSmoke"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="TxtApellidos" Placeholder="Last Name" Keyboard="Text" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="DimGray"/>
+                        <Setter Property="TextColor" Value="WhiteSmoke"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="TxtCorreo" Placeholder="Email" Keyboard="Email" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="DimGray"/>
+                        <Setter Property="TextColor" Value="WhiteSmoke"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Entry x:Name="TxtPhoneNumber" Placeholder="Phone Number" Keyboard="Telephone" ClearButtonVisibility="WhileEditing">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True" >
+                        <Setter Property="BackgroundColor" Value="DimGray"/>
+                        <Setter Property="TextColor" Value="WhiteSmoke"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+
+            <StackLayout Orientation="Horizontal" >
+                <Button x:Name="BtnUpdate" Text="Apply" CornerRadius="15" BackgroundColor="Black" FontSize="20" Clicked="BtnUpdate_Clicked" />
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
